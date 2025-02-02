@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Harun Degirmenci</title>
+  <title>Harun D-Benji</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Bebas+Neue&family=Press+Start+2P&display=swap" rel="stylesheet">
   <style>
     * {
@@ -14,65 +14,28 @@
 
     body {
       font-family: 'Orbitron', sans-serif;
-      background: linear-gradient(45deg, #ff0000, #5a00ff, #00d9ff);
-      background-size: 400% 400%;
-      animation: gradientBG 10s infinite alternate;
+      background: radial-gradient(circle, #0f0c29, #302b63, #24243e);
       color: white;
       text-align: center;
-      height: 100vh;
-    }
-
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 100% 50%; }
     }
 
     header {
       padding: 40px;
       font-family: 'Press Start 2P', cursive;
-      text-transform: uppercase;
-      font-size: 3rem;
-      color: #fff;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-      letter-spacing: 2px;
+      font-size: 2rem;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+      background: rgba(0, 0, 0, 0.5);
+      border-bottom: 3px solid white;
     }
 
-    .content {
-      margin-top: 50px;
-      padding: 30px;
-      background-color: rgba(0, 0, 0, 0.7);
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-      transition: all 0.3s ease-in-out;
+    section {
+      padding: 40px 10%;
     }
 
-    .content:hover {
-      transform: scale(1.05);
-    }
-
-    h2 {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: 2.5rem;
-      color: #ff00ff;
-      margin-bottom: 20px;
-    }
-
-    .social-links a, .tiktok-links a {
-      text-decoration: none;
-      color: white;
-      font-size: 1.2rem;
-      background: linear-gradient(45deg, #ff00ff, #00ff00);
-      padding: 15px 25px;
-      border-radius: 50px;
-      margin: 15px;
+    /* ✨ Glitch-Animation für dein Profilbild */
+    .profile-container {
+      position: relative;
       display: inline-block;
-      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
-      transition: transform 0.3s, background-color 0.3s;
-    }
-
-    .social-links a:hover, .tiktok-links a:hover {
-      background-color: #ff00ff;
-      transform: scale(1.1);
     }
 
     .profile-pic {
@@ -80,87 +43,146 @@
       height: 200px;
       border-radius: 50%;
       object-fit: cover;
-      margin-top: 30px;
-      border: 4px solid #fff;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      margin: 20px auto;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
+      transition: transform 0.3s;
     }
 
-    iframe {
+    .glitch {
+      position: absolute;
+      top: 0;
+      left: 0;
       width: 100%;
-      max-width: 600px;
-      height: 400px;
-      margin: 20px 0;
-      border: none;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-      transition: transform 0.3s ease;
+      height: 100%;
+      border-radius: 50%;
+      background: rgba(255, 0, 0, 0.2);
+      filter: blur(5px);
+      animation: glitch 0.5s infinite alternate;
     }
 
-    iframe:hover {
-      transform: scale(1.05);
+    @keyframes glitch {
+      0% { transform: translate(2px, 2px); opacity: 0.7; }
+      100% { transform: translate(-2px, -2px); opacity: 1; }
+    }
+
+    /* 🔥 Neon-Button-Styles */
+    .social-links a, .video-btn {
+      display: inline-block;
+      margin: 15px;
+      padding: 12px 20px;
+      background: linear-gradient(135deg, #ff0000, #ff7b00);
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      transition: 0.3s;
+      box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+    }
+
+    .social-links a:hover, .video-btn:hover {
+      background: linear-gradient(135deg, #ff7b00, #ff0000);
+      transform: scale(1.1);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+    }
+
+    /* 🎬 Video-Popup-Fenster */
+    .video-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px white;
+      z-index: 1000;
+    }
+
+    .video-popup iframe {
+      width: 350px;
+      height: 600px;
+    }
+
+    .close-btn {
+      background: red;
+      color: white;
+      padding: 5px 10px;
+      border: none;
+      cursor: pointer;
+      font-size: 1.2rem;
+      margin-top: 10px;
     }
 
     footer {
-      background-color: #111;
+      background: rgba(0, 0, 0, 0.7);
       color: white;
       text-align: center;
       padding: 15px;
-      position: fixed;
       width: 100%;
+      position: fixed;
       bottom: 0;
       font-size: 1rem;
     }
-
-    footer .footer-text {
-      margin: 0;
-    }
-
   </style>
 </head>
 <body>
-
   <header>
-    Harun Degi
+    Harun D-Benji
   </header>
 
-  <section class="content">
-    <!-- Profilbild -->
-    <img src="mein_bild.jpg" alt="Harun Degirmenci" class="profile-pic">
+  <section>
+    <!-- 🚀 Glitch-animiertes Profilbild -->
+    <div class="profile-container">
+      <img src="mein_bild.jpg" alt="Harun Degirmenci" class="profile-pic">
+      <div class="glitch"></div>
+    </div>
 
-    <h2>Über mich</h2>
-    <p>Hi, ich bin Harun! Hier findest du meine sozialen Kanäle, sowie meine Kontaktdaten. Schau dich um und bleib dran!</p>
-  </section>
+    <div class="content">
+      <h2>Über mich</h2>
+      <p>Hey Leute, ich bin Harun! Hier sind meine Social-Media-Links und meine Kontaktdaten.</p>
+    </div>
 
-  <section class="content">
-    <h2>Social Media</h2>
-    <div class="social-links">
+    <div class="content social-links">
+      <h2>Finde mich auf Social Media</h2>
       <a href="https://www.instagram.com/harundgr_?igsh=MTYwbGc1cWR5bDRjdQ==" target="_blank">Instagram</a>
       <a href="https://www.tiktok.com/@hrrnn8?_t=ZN-8tZGxIbMOhi&_r=1" target="_blank">TikTok</a>
     </div>
-  </section>
 
-  <section class="content">
-    <h2>Kontakt</h2>
-    <p>Du kannst mich gerne über folgende E-Mail-Adresse erreichen:</p>
-    <p><strong><a href="mailto:harundegi1616@gmail.com">harundegi1616@gmail.com</a></strong></p>
-    <p>Oder ruf mich an: <strong>0157 37510595</strong></p>
-  </section>
+    <div class="content">
+      <h2>Kontakt</h2>
+      <p><strong>E-Mail:</strong> harundegi1616@gmail.com</p>
+      <p><strong>Telefon:</strong> 0157 37510595</p>
+    </div>
 
-  <!-- TikTok Video Links -->
-  <section class="content tiktok-links">
-    <h2>Meine TikTok-Videos</h2>
-    <div>
-      <a href="https://vm.tiktok.com/ZNeoNEFur/" target="_blank">TikTok Video 1</a>
-      <a href="https://vm.tiktok.com/ZNeoFhTgk/" target="_blank">TikTok Video 2</a>
-      <a href="https://vm.tiktok.com/ZNeoNo2Eb/" target="_blank">TikTok Video 3</a>
+    <div class="content">
+      <h2>Meine TikTok-Videos</h2>
+      <button class="video-btn" onclick="openVideo('https://www.tiktok.com/embed/7383719281927630861')">Video 1</button>
+      <button class="video-btn" onclick="openVideo('https://www.tiktok.com/embed/7383729828371836929')">Video 2</button>
+      <button class="video-btn" onclick="openVideo('https://www.tiktok.com/embed/7383749184729183489')">Video 3</button>
     </div>
   </section>
 
-  <section class="content">
+  <!-- 🎬 Video-Popup -->
+  <div id="video-popup" class="video-popup">
+    <iframe id="video-frame" frameborder="0" allowfullscreen></iframe>
+    <button class="close-btn" onclick="closeVideo()">Schließen</button>
+  </div>
 
   <footer>
-    <p class="footer-text">&copy; 2025 Harun Degirmenci. Alle Rechte vorbehalten.</p>
+    &copy; 2025 Harun D-Benji. Alle Rechte vorbehalten.
   </footer>
 
+  <script>
+    function openVideo(url) {
+      document.getElementById("video-frame").src = url;
+      document.getElementById("video-popup").style.display = "block";
+    }
+    function closeVideo() {
+      document.getElementById("video-popup").style.display = "none";
+      document.getElementById("video-frame").src = "";
+    }
+  </script>
 </body>
 </html>
