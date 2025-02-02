@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harun D-Benji</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Bebas+Neue&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(45deg, #ff0000, #5a00ff, #00d9ff);
+      background-size: 400% 400%;
+      animation: gradientBG 10s infinite alternate;
+      color: white;
+      text-align: center;
+      height: 100vh;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    header {
+      padding: 40px;
+      font-family: 'Press Start 2P', cursive;
+      text-transform: uppercase;
+      font-size: 3rem;
+      color: #fff;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+      letter-spacing: 2px;
+    }
+
+    .content {
+      margin-top: 50px;
+      padding: 30px;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+      transition: all 0.3s ease-in-out;
+    }
+
+    .content:hover {
+      transform: scale(1.05);
+    }
+
+    h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 2.5rem;
+      color: #ff00ff;
+      margin-bottom: 20px;
+    }
+
+    .social-links a, .tiktok-links a {
+      text-decoration: none;
+      color: white;
+      font-size: 1.2rem;
+      background: linear-gradient(45deg, #ff00ff, #00ff00);
+      padding: 15px 25px;
+      border-radius: 50px;
+      margin: 15px;
+      display: inline-block;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .social-links a:hover, .tiktok-links a:hover {
+      background-color: #ff00ff;
+      transform: scale(1.1);
+    }
+
+    .profile-pic {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-top: 30px;
+      border: 4px solid #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    iframe {
+      width: 100%;
+      max-width: 600px;
+      height: 400px;
+      margin: 20px 0;
+      border: none;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease;
+    }
+
+    iframe:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: #111;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+      font-size: 1rem;
+    }
+
+    footer .footer-text {
+      margin: 0;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    Harun D-Benji
+  </header>
+
+  <section class="content">
+    <!-- Profilbild -->
+    <img src="mein_bild.jpg" alt="Harun Degirmenci" class="profile-pic">
+
+    <h2>Über mich</h2>
+    <p>Hi, ich bin Harun! Hier findest du meine sozialen Kanäle, sowie meine Kontaktdaten. Schau dich um und bleib dran!</p>
+  </section>
+
+  <section class="content">
+    <h2>Social Media</h2>
+    <div class="social-links">
+      <a href="https://www.instagram.com/harundgr_?igsh=MTYwbGc1cWR5bDRjdQ==" target="_blank">Instagram</a>
+      <a href="https://www.tiktok.com/@hrrnn8?_t=ZN-8tZGxIbMOhi&_r=1" target="_blank">TikTok</a>
+    </div>
+  </section>
+
+  <section class="content">
+    <h2>Kontakt</h2>
+    <p>Du kannst mich gerne über folgende E-Mail-Adresse erreichen:</p>
+    <p><strong><a href="mailto:harundegi1616@gmail.com">harundegi1616@gmail.com</a></strong></p>
+    <p>Oder ruf mich an: <strong>0157 37510595</strong></p>
+  </section>
+
+  <!-- TikTok Video Links -->
+  <section class="content tiktok-links">
+    <h2>Meine TikTok-Videos</h2>
+    <div>
+      <a href="https://vm.tiktok.com/ZNeoNEFur/" target="_blank">TikTok Video 1</a>
+      <a href="https://vm.tiktok.com/ZNeoFhTgk/" target="_blank">TikTok Video 2</a>
+      <a href="https://vm.tiktok.com/ZNeoNo2Eb/" target="_blank">TikTok Video 3</a>
+    </div>
+  </section>
+
+  <section class="content">
+    <h2>Schau dir meine TikTok-Videos direkt an!</h2>
+    <!-- TikTok Iframes -->
+    <div>
+      <iframe src="https://vm.tiktok.com/ZNeoNEFur/" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://vm.tiktok.com/ZNeoFhTgk/" frameborder="0" allowfullscreen></iframe>
+      <iframe src="https://vm.tiktok.com/ZNeoNo2Eb/" frameborder="0" allowfullscreen></iframe>
+    </div>
+  </section>
+
+  <footer>
+    <p class="footer-text">&copy; 2025 Harun D-Benji. Alle Rechte vorbehalten.</p>
+  </footer>
+
+</body>
+</html>
