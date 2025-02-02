@@ -32,89 +32,60 @@
       padding: 40px 10%;
     }
 
-    /* ✨ Glitch-Animation für dein Profilbild */
-    .profile-container {
-      position: relative;
-      display: inline-block;
-    }
-
-    .profile-pic {
-      width: 200px;
-      height: 200px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin: 20px auto;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.6);
-      transition: transform 0.3s;
-    }
-
-    .glitch {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 50%;
-      background: rgba(255, 0, 0, 0.2);
-      filter: blur(5px);
-      animation: glitch 0.5s infinite alternate;
-    }
-
-    @keyframes glitch {
-      0% { transform: translate(2px, 2px); opacity: 0.7; }
-      100% { transform: translate(-2px, -2px); opacity: 1; }
-    }
-
-    /* 🔥 Neon-Button-Styles */
-    .social-links a, .video-btn {
+    /* Buttons */
+    .toggle-btn {
       display: inline-block;
       margin: 15px;
       padding: 12px 20px;
-      background: linear-gradient(135deg, #ff0000, #ff7b00);
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
       font-size: 1.3rem;
       font-weight: bold;
-      transition: 0.3s;
-      box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
-    }
-
-    .social-links a:hover, .video-btn:hover {
-      background: linear-gradient(135deg, #ff7b00, #ff0000);
-      transform: scale(1.1);
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
-    }
-
-    /* 🎬 Video-Popup-Fenster */
-    .video-popup {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: rgba(0, 0, 0, 0.9);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px white;
-      z-index: 1000;
-    }
-
-    .video-popup iframe {
-      width: 350px;
-      height: 600px;
-    }
-
-    .close-btn {
-      background: red;
-      color: white;
-      padding: 5px 10px;
-      border: none;
       cursor: pointer;
-      font-size: 1.2rem;
-      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+      transition: 0.3s;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
     }
 
+    .toggle-btn:hover {
+      transform: scale(1.1);
+    }
+
+    /* Instagram & TikTok Button mit Originalfarben */
+    .btn-instagram {
+      background: linear-gradient(135deg, #feda75, #fa7e1e, #d62976, #962fbf, #4f5bd5);
+      color: white;
+    }
+
+    .btn-tiktok {
+      background: linear-gradient(135deg, #69c9d0, #ff0050);
+      color: white;
+    }
+
+    .btn-contact {
+      background: linear-gradient(135deg, #ff7b00, #ff0000);
+      color: white;
+    }
+
+    .btn-videos {
+      background: linear-gradient(135deg, #00ff87, #007bff);
+      color: white;
+    }
+
+    /* Versteckte Inhalte */
+    .hidden {
+      display: none;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .visible {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Footer */
     footer {
       background: rgba(0, 0, 0, 0.7);
       color: white;
@@ -133,41 +104,43 @@
   </header>
 
   <section>
-    <!-- 🚀 Glitch-animiertes Profilbild -->
-    <div class="profile-container">
-      <img src="mein_bild.jpg" alt="Harun Degirmenci" class="profile-pic">
-      <div class="glitch"></div>
-    </div>
-
     <div class="content">
       <h2>Über mich</h2>
-      <p>Ich bin Harun! Hier sind meine Social-Media-Links und meine Kontaktdaten.</p>
+      <p>Hey Leute, ich bin Harun! Hier sind meine Social-Media-Links, meine Kontaktdaten und meine TikTok-Videos.</p>
     </div>
 
-    <div class="content social-links">
-      <h2>Finde mich auf Social Media</h2>
-      <a href="https://www.instagram.com/harundgr_?igsh=MTYwbGc1cWR5bDRjdQ==" target="_blank">Instagram</a>
-      <a href="https://www.tiktok.com/@hrrnn8?_t=ZN-8tZGxIbMOhi&_r=1" target="_blank">TikTok</a>
-    </div>
+    <!-- Buttons zum Anzeigen der Inhalte -->
+    <button class="toggle-btn btn-contact" onclick="toggleSection('contact-section')">📞 Kontakt anzeigen</button>
+    <button class="toggle-btn btn-instagram" onclick="toggleSection('social-media-section')">📲 Social Media</button>
+    <button class="toggle-btn btn-videos" onclick="toggleSection('video-section')">🎬 TikTok-Videos</button>
 
-    <div class="content">
+    <!-- Kontakt -->
+    <div id="contact-section" class="hidden">
       <h2>Kontakt</h2>
       <p><strong>E-Mail:</strong> harundegi1616@gmail.com</p>
       <p><strong>Telefon:</strong> 0157 37510595</p>
     </div>
 
-    <div class="content">
+    <!-- Social Media -->
+    <div id="social-media-section" class="hidden">
+      <h2>Finde mich auf Social Media</h2>
+      <a class="toggle-btn btn-instagram" href="https://www.instagram.com/harundgr_?igsh=MTYwbGc1cWR5bDRjdQ==" target="_blank">📸 Instagram</a>
+      <a class="toggle-btn btn-tiktok" href="https://www.tiktok.com/@hrrnn8?_t=ZN-8tZGxIbMOhi&_r=1" target="_blank">🎵 TikTok</a>
+    </div>
+
+    <!-- TikTok-Videos -->
+    <div id="video-section" class="hidden">
       <h2>Meine TikTok-Videos</h2>
-      <button class="video-btn" onclick="openVideo('https://www.tiktok.com/embed/7383719281927630861')">Video 1</button>
-      <button class="video-btn" onclick="openVideo('https://www.tiktok.com/embed/7383729828371836929')">Video 2</button>
-      <button class="video-btn" onclick="openVideo('https://www.tiktok.com/embed/7383749184729183489')">Video 3</button>
+      <button class="toggle-btn btn-videos" onclick="openVideo('https://www.tiktok.com/embed/7383719281927630861')">📹 Video 1</button>
+      <button class="toggle-btn btn-videos" onclick="openVideo('https://www.tiktok.com/embed/7383729828371836929')">📹 Video 2</button>
+      <button class="toggle-btn btn-videos" onclick="openVideo('https://www.tiktok.com/embed/7383749184729183489')">📹 Video 3</button>
     </div>
   </section>
 
-  <!-- 🎬 Video-Popup -->
-  <div id="video-popup" class="video-popup">
-    <iframe id="video-frame" frameborder="0" allowfullscreen></iframe>
-    <button class="close-btn" onclick="closeVideo()">Schließen</button>
+  <!-- Video-Popup -->
+  <div id="video-popup" class="hidden">
+    <iframe id="video-frame" width="350" height="600" frameborder="0" allowfullscreen></iframe>
+    <button class="toggle-btn btn-contact" onclick="closeVideo()">Schließen</button>
   </div>
 
   <footer>
@@ -175,13 +148,29 @@
   </footer>
 
   <script>
+    function toggleSection(sectionId) {
+      let section = document.getElementById(sectionId);
+      if (section.classList.contains("visible")) {
+        section.classList.remove("visible");
+        setTimeout(() => section.classList.add("hidden"), 500);
+      } else {
+        section.classList.remove("hidden");
+        setTimeout(() => section.classList.add("visible"), 50);
+      }
+    }
+
     function openVideo(url) {
       document.getElementById("video-frame").src = url;
-      document.getElementById("video-popup").style.display = "block";
+      document.getElementById("video-popup").classList.remove("hidden");
+      document.getElementById("video-popup").classList.add("visible");
     }
+
     function closeVideo() {
-      document.getElementById("video-popup").style.display = "none";
-      document.getElementById("video-frame").src = "";
+      document.getElementById("video-popup").classList.remove("visible");
+      setTimeout(() => {
+        document.getElementById("video-popup").classList.add("hidden");
+        document.getElementById("video-frame").src = "";
+      }, 500);
     }
   </script>
 </body>
