@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harun Degirmenci</title>
+    <style>
+        /* Reset */
+        body, h1, h2, p, a, div {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Grundlegende Farben */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e7a6e, #4f96b8);
+            color: white;
+            padding: 40px;
+            text-align: center;
+            animation: fadeIn 2s ease-out;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Navigation */
+        nav {
+            text-align: center;
+            background-color: #333;
+            padding: 10px;
+            animation: slideIn 1s ease-out;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: #4f96b8;
+            text-decoration: underline;
+        }
+
+        /* Über mich */
+        section {
+            padding: 40px 10%;
+            text-align: center;
+        }
+
+        /* Profilbild */
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 20px auto;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            transform: scale(1);
+            transition: transform 0.3s ease;
+        }
+
+        .profile-pic:hover {
+            transform: scale(1.1);
+        }
+
+        /* Content Box */
+        .content {
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+            opacity: 0;
+            animation: fadeInUp 1.5s forwards;
+        }
+
+        /* Social Links */
+        .social-links a {
+            display: inline-block;
+            margin: 15px;
+            padding: 12px 20px;
+            background-color: #1e7a6e;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            transform: scale(1);
+            transition: transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: #4f96b8;
+            transform: scale(1.05);
+        }
+
+        /* Kontaktformular */
+        .contact-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+            opacity: 0;
+            animation: fadeInUp 1.5s forwards;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .footer-text {
+            margin: 0;
+        }
+
+        /* Animationen */
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(0); }
+        }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header und Navigation -->
+    <header>
+        <h1>Harun Degirmenci</h1>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">Über mich</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Kontakt</a>
+    </nav>
+
+    <section>
+        <!-- Bild in der Über-Mich-Sektion -->
+        <img src="mein_bild.jpg" alt="Harun Degirmenci" class="profile-pic">
+
+        <!-- Über mich -->
+        <div class="content" id="about">
+            <h2>Über mich</h2>
+            <p>Hi, was geht ab! Ich bin Harun, ein kreativer Entwickler, der sich mit Webentwicklung, Design und neuen Technologien beschäftigt.</p>
+        </div>
+
+        <!-- Social Media Links -->
+        <div class="content social-links">
+            <h2>Finde mich auf Social Media</h2>
+            <a href="https://www.instagram.com/harundgr_?igsh=MTYwbGc1cWR5bDRjdQ==" target="_blank">Instagram</a>
+            <a href="https://www.tiktok.com/@hrrnn8?_t=ZN-8tZGxIbMOhi&_r=1" target="_blank">TikTok</a>
+        </div>
+
+        <!-- Kontakt -->
+        <div class="content contact-form" id="contact">
+            <h2>Kontakt</h2>
+            <p>Du kannst mich gerne über folgende E-Mail-Adresse erreichen:</p>
+            <p><strong>harundegi1616@gmail.com</strong></p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p class="footer-text">&copy; 2025 Harun D. Alle Rechte vorbehalten.</p>
+    </footer>
+
+</body>
+</html>
